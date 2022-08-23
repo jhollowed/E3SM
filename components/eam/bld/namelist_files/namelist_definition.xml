@@ -3436,6 +3436,12 @@ Type of idealized physics configuration to use if running cam_physpkg="ideal".
 Default: held-suarez
 </entry>
 
+<entry id="ideal_phys_analytic_ic" type="logical" group="phys_ctl_nl"
+       valid_values="">
+Whether or not to use analytic initial conditions if running cam_physpkg="ideal".
+Default: true
+</entry>
+
 <entry id="cam_chempkg" type="char*16" category="build"
        group="phys_ctl_nl" valid_values="waccm_mozart,waccm_ghg,trop_mozart,
                                          trop_ghg,trop_bam,trop_mam3,trop_mam4,trop_mam4_resus_soag,
@@ -4154,6 +4160,21 @@ Default: set by configure
 <entry id="aoa_read_from_ic_file" type="logical" category="test_tracers"
        group="aoa_tracers_nl" valid_values="" >
 If true age of air tracers are read from the initial conditions file.
+If this is not specified then they are not read from IC file.
+Default: TRUE
+</entry>
+
+<entry id="cldera_clock_tracers_flag" type="logical" category="test_tracers"
+       group="cldera_clock_tracers_nl" valid_values="" >
+If true, CLDERA clock tracers are included.  This variable should not be set
+by the user.  It will be set by build-namelist to be consistent with the
+'-cldera_clock_trcs' argument specified to configure.
+Default: set by configure
+</entry>
+
+<entry id="cldera_clock_read_from_ic_file" type="logical" category="test_tracers"
+       group="cldera_clock_tracers_nl" valid_values="" >
+If true, CLDERA clock tracers are read from the initial conditions file.
 If this is not specified then they are not read from IC file.
 Default: TRUE
 </entry>
